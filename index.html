@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>My canvas</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="canvas.css">
+    </head>
+    <body style="background-color:rgba(61, 53, 55, 0.863);"> <!--畫布之外的背景色-->
+            <!-- 創造畫布 -->
+            
+        <canvas id="myCanvas" width="1200" height="800"></canvas>
+            <!-- 工具箱 --> 
+
+            <!-- 右邊的工具箱--> 
+
+        <table style="width : 200px ; height: 800px ; background-color: rgb(63, 55, 55); margin-top: 100px; margin-right: 200px;" align = "right">
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="color" class="color" id="colorpicker" value="#EDE1DF"></td>
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="range" min="0" max="100" id="penwidth" class ="slider" step="1" value="50"></td> 
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="number" id="textsize" min="1" max="100" value="18"></td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <select id="font">
+                        <option value="Arial">Arial</option>
+                        <option value="TimesNewRoman">TimesNewRoman</option>
+                    </select>
+                </td>           
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="text" id="text" value = " : )"></td>
+            </tr>
+            <tr>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/gradient.png" id ="Gradient" width="100" height="100" onclick="gradient()"></td>
+            </tr>
+            <tr>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/reset.png" id ="Reset" width="100" height="100" onclick="reset()"></td>
+            </tr>
+        </table>
+
+            <!--javascript-->
+
+        <script src="canvas.js"></script>
+
+            <!-- 左邊的工具箱 -->
+
+        <table style="width : 200px ; height: 800px ; background-color: rgb(63, 55, 55); margin-top: 100px; margin-right: 50px;" align = "right" >
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/pen.png" id ="Pen" width="100" height="100"  onclick="draw()"></td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/eraser.png" id ="Eraser" width="100" height="100" onclick="erase()"></td>
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/text.png" id ="Text" width="100" height="100" onclick="textinput()"></td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/circle.png" id ="Circle" width="100" height="100" onclick="circle()"></td>
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/rectangle.png" id ="Rectangle" width="100" height="100" onclick="rectangle()"></td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/triangle.png" id ="Triangle" width="100" height="100" onclick="triangle()"></td>
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/line.png" id ="Line" width="100" height="100" onclick="line()"></td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/fill.png" id ="Fill" width="100" height="100" onclick="fill()"></td>
+            </tr>
+            <tr class="row">
+                <td>
+                    <label class="btn">
+                        <input id="Upload" style="display:none;" type="file">
+                        <img class="upload_icon" src = "picture_src/upload.png" onclick="upload()">
+                    </label>
+                </td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/download.png" id ="Download" width="100" height="100" onclick="download()"></td>
+            </tr>
+            <tr class="row">
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/undo.png" id ="Undo" width="100" height="100" onclick="undo()"></td>
+                <td style="margin-top: 0px;" align="left"><input type="image" src="picture_src/redo.png" id ="Redo" width="100" height="100" onclick="redo()"></td>
+            </tr>
+            <tr>
+                <td><input type="image" src="picture_src/scalebigger.png" id ="Scalebigger" width="100" height="100" onclick="scalebigger()"></td>
+                <td><input type="image" src="picture_src/scalesmaller.png" id ="Scalesmaller" width="100" height="100" onclick="scalesmaller()">
+            </tr>
+        </table>
+    </body>
+</html>
